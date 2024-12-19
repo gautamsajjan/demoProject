@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import './AddPopUp.css';
 import { assets } from '../../assets/assets';
@@ -28,28 +26,32 @@ const AddPopUp = ({ onClose, onAddProduct, product }) => {
         e.preventDefault();
         const productData = {
             image,
-            name: e.target.name.value,
-            description: e.target.description.value,
-            category: e.target.category.value,
+            name: e.target.name.value.trim(),
+            description: e.target.description.value.trim(),
+            category: e.target.category.value.trim(),
+            dose: e.target.dose ? e.target.dose.value.trim() : '',
             price: parseFloat(e.target.price.value),
-            quantity: e.target.quantity.value,
-            nutrition: e.target.nutrition.value,
-            shelfLife: e.target.shelfLife.value,
+            quantity: e.target.quantity.value.trim(),
+            
         };
 
-        if (onAddProduct) onAddProduct(productData); // Pass data to parent
-        if (onClose) onClose();
+        
+        if (onAddProduct) {
+            onAddProduct(productData);  
+        }
+
+        
+        if (onClose) {
+            onClose();  
+        }
     };
 
     const renderImagePreview = () => {
         if (image instanceof File || image instanceof Blob) {
-            // Create object URL for preview
             return URL.createObjectURL(image);
         } else if (typeof image === 'string') {
-            // Use existing string URL
             return image;
         } else {
-            // Default image placeholder
             return assets.upimg;
         }
     };
@@ -70,7 +72,7 @@ const AddPopUp = ({ onClose, onAddProduct, product }) => {
                 </div>
                 <div className="p-name">
                     <p>Product Name</p>
-                    <input type="text" name="name" placeholder="e.g. Oranges" defaultValue={product ? product.name : ''} required />
+                    <input type="text" name="name" placeholder="e.g. Paracetamol" defaultValue={product ? product.name : ''} required />
                 </div>
                 <div className="p-description">
                     <p>Product Description</p>
@@ -79,32 +81,30 @@ const AddPopUp = ({ onClose, onAddProduct, product }) => {
                 <div className="p-category">
                     <p>Product Category</p>
                     <select name="category" defaultValue={product ? product.category : ''} required>
-                        <option value="Fruits">Fruits</option>
-                        <option value="Vegetables">Vegetables</option>
-                        <option value="Meat and Poultry">Meat and Poultry</option>
-                        <option value="Grains and Cereals">Grains and Cereals</option>
-                        <option value="Dairy Products">Dairy Products</option>
-                        <option value="Pickles and Other Products">Pickles and Other Products</option>
+                        <option value="pain-relief-medications">Pain Relief Medications</option>
+                        <option value="cold-&-flu-medications">Cold & Flu Medications</option>
+                        <option value="antibiotics">Antibiotics</option>
+                        <option value="allergy-medications">Allergy Medications</option>
+                        <option value="digestive-health-products">Digestive Health Products</option>
+                        <option value="cardiovascular-medications">Cardiovascular Medications</option>
+                        <option value="diabetes-medications">Diabetes Medications</option>
+                        <option value="topical-medications">Topical Medications</option>
+                        <option value="mental-health-medications">Mental Health Medications</option>
+                        <option value="eye-care-medications">Eye Care Medications</option>
                     </select>
+                </div>
+                <div className="p-dose">
+                    <p>Product Dose</p>
+                    <input type="text" name="dose" placeholder="e.g. 500mg" defaultValue={product ? product.dose : ''} required />
                 </div>
                 <div className="ppstock">
                     <div className="p-price">
                         <p>Product Price</p>
-                        <input type="number" name="price" placeholder="e.g. Rs.100/kg" defaultValue={product ? product.price : ''} required />
+                        <input type="number" name="price" placeholder="e.g. Rs.100/tablet" defaultValue={product ? product.price : ''} required />
                     </div>
                     <div className="p-stock">
                         <p>Product Quantity</p>
-                        <input type="text" name="quantity" placeholder="e.g. 50 kg" defaultValue={product ? product.quantity : ''} required />
-                    </div>
-                </div>
-                <div className="p-nut-sto">
-                    <div className="p-Nut">
-                        <p>Nutritional Value</p>
-                        <input type="text" name="nutrition" placeholder="e.g. 460 calories" defaultValue={product ? product.nutrition : ''} />
-                    </div>
-                    <div className="p-Sto">
-                        <p>Shelf Life</p>
-                        <input type="text" name="shelfLife" placeholder="2 days at room temp...." defaultValue={product ? product.shelfLife : ''} />
+                        <input type="text" name="quantity" placeholder="e.g. 50 tablet" defaultValue={product ? product.quantity : ''} required />
                     </div>
                 </div>
                 <button type="submit" className="btn1">Add Product</button>

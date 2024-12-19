@@ -1,4 +1,4 @@
-// controllers/authController.js
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Pharmacy = require('../models/pharmacy');
@@ -42,7 +42,7 @@ const signup = async (req, res) => {
       const hashedPassword = await bcrypt.hash(password, 10);
       const newPharmacy = new Pharmacy({
         email,
-        phone: phoneNumber,
+        phoneNumber,
         password,
         role: 'pharmacy',
         registrationCode,
@@ -51,7 +51,7 @@ const signup = async (req, res) => {
       });
 
       const savedPharmacy = await newPharmacy.save();
-      const token = jwt.sign({ userId: savedPharmacy._id, role: 'pharmacy' }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      const token = jwt.sign({ userId: savedPharmacy._id, role: savedPharmacy.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
       return res.status(201).json({ message: 'Pharmacy registered', user: savedPharmacy, token });
     }
 

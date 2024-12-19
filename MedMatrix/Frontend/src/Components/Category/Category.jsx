@@ -1,48 +1,30 @@
-
-
-
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Category.css';
-import fruitImage from '../../assets/fruit1.jpg';
-import vegetableImage from '../../assets/vegetable.jpg';
-import grainImage from '../../assets/grain.jpg';
-import dairyImage from '../../assets/dairy-products.jpg';
-import meatImage from '../../assets/Meat.jpg';
-import otherImage from '../../assets/other.jpg';
 
-const categories = [
-  {
-    name: "Fruits",
-    image: fruitImage,
-    subcategories: ["Apple", "Banana"],
-  },
-  {
-    name: "Vegetables",
-    image: vegetableImage,
-    subcategories: ["Carrot", "Tomato"],
-  },
-  {
-    name: "Grains",
-    image: grainImage,
-    subcategories: ["Rice", "Wheat"],
-  },
-  {
-    name: "Dairy",
-    image: dairyImage,
-    subcategories: ["Milk", "Cheese"],
-  },
-  {
-    name: "Meat & Poultry",
-    image: meatImage,
-    subcategories: ["Chicken", "Beef"],
-  },
-  {
-    name: "Other Products",
-    image: otherImage,
-    subcategories: ["Honey", "Tea"],
-  }
+import painReliefImage from '../../assets/painrelief.jpeg';
+import coldAndFluImage from '../assets/synax-tablets.jpg';
+import antibioticsImage from '../assets/antibiotic.jpg';
+import allergyImage from '../assets/allergy.jpg';
+import digestiveHealthImage from '../assets/digestive.jpg';
+import cardiovascularImage from '../assets/cardiovascular.jpg';
+import diabetesImage from '../assets/diabeties.jpg';
+import topicalMedicationsImage from '../assets/topical medications.jpg';
+import mentalHealthImage from '../assets/mentalhealth.jpg';
+import eyeCareImage from '../../assets/eyecare.jpg';
+
+
+const medicineCategories = [
+  { name: "Pain Relief Medications", image:  painReliefImage },
+  { name: "Cold & Flu Medications", image: coldAndFluImage },
+  { name: "Antibiotics", image: antibioticsImage },
+  { name: "Allergy Medications", image: allergyImage },
+  { name: "Digestive Health Products", image: digestiveHealthImage },
+  { name: "Cardiovascular Medications", image: cardiovascularImage },
+  { name: "Diabetes Medications", image: diabetesImage },
+  { name: "Topical Medications", image: topicalMedicationsImage },
+  { name: "Mental Health Medications", image: mentalHealthImage },
+  { name: "Eye Care Medications", image: eyeCareImage },
 ];
 
 export default function Category() {
@@ -56,14 +38,14 @@ export default function Category() {
     <div className="container">
       <h1 className="header">Welcome to Our Categories!</h1>
       <div className="categories">
-        {categories.map((category, index) => (
+        {medicineCategories.map((category, index) => (
           <div
             key={index}
             className="category-card"
             onClick={() => handleCategoryClick(category)}
           >
             <img
-              src={category.image}
+              src={category.image} 
               alt={`Image of ${category.name}`}
               className="category-image"
             />

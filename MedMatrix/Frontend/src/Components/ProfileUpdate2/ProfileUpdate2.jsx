@@ -63,7 +63,7 @@ const ProfileUpdate2 = ({ username, setUsername, setShowUpdate, onProfileUpdate 
     console.log('hii');
   
     try {
-      const response = await fetch('http://localhost:5000/update-profile/consumer', {
+      const response = await fetch('http://localhost:5000/update-profile/customer', {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,

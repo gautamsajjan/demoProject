@@ -44,7 +44,7 @@ const Signup = ({ onLogin }) => {
       });
 
       const result = await response.json();
-      console.log(result); // Check the structure of the response
+      console.log(result); 
       if (response.ok) {
         localStorage.setItem('token', result.token);
         if (result.user) {

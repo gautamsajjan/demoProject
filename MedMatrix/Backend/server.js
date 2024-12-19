@@ -3,7 +3,9 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
 const dotenv = require('dotenv');
+const productRoutes = require('./routes/productroutes');
 
 // Initialize the app
 const app = express();
@@ -17,7 +19,11 @@ app.use(express.json());
 
 // Routes
 app.use('/', authRoutes);
+// app.use('/payments', paymentRoutes);
+app.use('/api/products', productRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
 
 
 // Connect to MongoDB

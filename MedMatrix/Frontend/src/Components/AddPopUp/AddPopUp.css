@@ -109,7 +109,7 @@ select:focus {
     border-color: green;
 }
 
-.ppstock, .p-nut-sto {
+.ppstock {
     display: flex;
     gap: 20px;
     align-items: flex-start;

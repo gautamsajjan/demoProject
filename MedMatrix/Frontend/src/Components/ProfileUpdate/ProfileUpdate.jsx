@@ -74,7 +74,7 @@ const saveAccountChanges = async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/update-profile/farmer', {
+    const response = await fetch('http://localhost:5000/update-profile/pharmacy', {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,

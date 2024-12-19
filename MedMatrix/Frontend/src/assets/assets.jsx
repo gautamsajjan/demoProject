@@ -1,55 +1,28 @@
-// import logo from './Krisi.png';
-// import hero from './HERO.png';
-// import inventory from './Inventory.jpg';
-// import order from './Order.jpg';
-// import setting from './Setting.png';
-// import backimg from './back.png';
-// import upimg from './upimg.jpg';
-// import profileimg from './Profile.png';
-// import buy from './Buy.jpg';
-// import cart from './Cart.jpg';
-// import profile from './Profile.jpg';
-// import cart111 from './Cart111.png';
-
-// export const assets = {
-//     logo,
-//     hero,
-//     inventory,
-//     order,
-//     setting,
-//     backimg,
-//     upimg,
-//     profileimg,
-//     buy,
-//     cart,
-//     profile,
-//     cart111,
-// };
-
-import logo from './Krisi.png';
-import hero from './HERO.png';
-import inventory from './Inventory.jpg';
-import order from './Order.jpg';
-import setting from './Setting.png';
-import backimg from './back.png';
+import Logo from './Logo.png';
+import pharmacyHero from './MHero.png';
+import inventory from './Inventory.png';
+import order from './Order.png';
+import appointment from './Appointments.png'
+import backimg from './back-img.png';
 import upimg from './upimg.jpg';
 import profileimg from './Profile.png';
-import buy from './Buy.jpg';
-import cart from './Cart.jpg';
-import profile from './Profile.jpg';
+import buy from './Buy.png';
 import cart111 from './Cart111.png';
+import profile from './Profie1.png';
+import setting from './Profile2.png'
+
 
 export const assets = {
-    logo,
-    hero,
+    Logo,
+    pharmacyHero,
     inventory,
     order,
-    setting,
+    appointment,
     backimg,
     upimg,
     profileimg,
     buy,
-    cart,
     profile,
-    cart111
+    cart111,
+    setting,
 };

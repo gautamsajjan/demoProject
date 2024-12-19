@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import Navbar2 from '../Navbar2/Navbar2';
 import { Routes, Route } from 'react-router-dom';
@@ -10,9 +7,9 @@ import Shop from '../../pages/Shop/Shop';
 import Cart2 from '../../pages/Cart2/Cart2';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import Profile2 from '../../pages/Profile2/Profile2';
-import ProductDetails from '../ProductDetails/ProductDetails'; // Import ProductDetails
+import ProductDetails from '../ProductDetails/ProductDetails'; 
 
-const ConsumerPage = () => {
+const CustomerPage = () => {
   return (
     <div className="App">
       <Navbar2 />
@@ -20,6 +17,7 @@ const ConsumerPage = () => {
         <Route path="/" element={<Homepage2 />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart2 />} />
+        <Route path="/Shop/:categoryName" element={< ProductDetails/>} /> 
         <Route path="/profile" element={<Profile2 />} />
       </Routes>
       <Footer2 />
@@ -28,4 +26,6 @@ const ConsumerPage = () => {
   );
 };
 
-export default ConsumerPage;
+export default CustomerPage;
+
+

@@ -8,16 +8,15 @@ const Hero1 = () => {
             <div className="pero">
                 <div className="zero">
                     <div className="hero">
-                        <div className="htext1">Sell Your Produce Directly</div>
-                        <div className="htext2">Boost Your Earnings Expand Your Reach And Gain Loyal Customers</div>
-                        <div className="htext3">A Platform Built on Trust and Transparency
-                        </div>
+                        <div className="htext1">Connect with Trusted Pharmacies</div>
+                        <div className="htext2">Access Medicines Easily, Manage Prescriptions, and Stay Healthy</div>
+                        <div className="htext3">A Platform Dedicated to Your Health and Convenience</div>
                         <div className="hbutton">
-                            <button>Join Us</button>
+                            <button>Explore Now</button>
                         </div>
                     </div>
                     <div className="hero-img">
-                        <img src={assets.hero} alt="" />
+                        <img src={assets.pharmacyHero} alt="Pharmacy Hero" />
                     </div>
                 </div>
             </div>

@@ -7,8 +7,8 @@ const customerSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   phoneNumber: { type: String, required: true },
   password: { type: String, required: true },
-  registrationCode: { type: String },
-  address: { type: String, },
+  role: {type: String, required: true},
+  address: { type: String, default: null },
   bio: { type: String, default: null },
   profileImage: { type: String, default: null },
 }, { timestamps: true });
@@ -20,4 +20,4 @@ customerSchema.pre('save', async function(next) {
   next();
 });
 
-module.exports = mongoose.model('Customer', customerSchema);
+module.exports = mongoose.model('customer_info', customerSchema);

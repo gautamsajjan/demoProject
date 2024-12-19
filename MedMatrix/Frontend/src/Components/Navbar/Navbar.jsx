@@ -1,61 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const [opt, setopt] = useState("Home");
+  const [opt, setOpt] = useState("Home"); // State for active link
+  const footerRef = useRef(null); // Create a ref for the footer section
+
+  // Function to scroll to the footer
+  const scrollToFooter = (e) => {
+    e.preventDefault(); // Prevent default anchor link behavior
+    footerRef.current?.scrollIntoView({ behavior: 'smooth' }); // Scroll to footer
+    setOpt("Contact Us"); // Update the active state
+  };
 
   return (
     <div className="nav">
       <div className="navbar">
         <div className="logo">
-          <img src={assets.logo} alt="Logo" />
+          <img src={assets.Logo} alt="Logo" />
         </div>
         <div className="list">
           <ul>
             <NavLink
-              to='/pharmacy'
+              to="/pharmacy"
               className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={() => setopt("Home")}
+              end
             >
               <span>Home</span>
             </NavLink>
             <NavLink
-              to='/pharmacy/My Products'
+              to="/pharmacy/MyProducts"
               className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={() => setopt("My Products")}
             >
-              <span>My Products</span>
+              <span>Manage Products</span>
             </NavLink>
             <NavLink
-              to='/pharmacy/Orders'
+              to="/pharmacy/Orders"
               className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={() => setopt("Orders")}
             >
               <span>Orders</span>
             </NavLink>
             <NavLink
-              to='/pharmacy/Sales Analytics'
+              to="/pharmacy/Profile"
               className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={() => setopt("Sales Analytics")}
-            >
-              <span>Sales Analytics</span>
-            </NavLink>
-            <NavLink
-              to='/pharmacy/Profile'
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={() => setopt("Profile")}
             >
               <span>Profile</span>
             </NavLink>
-            <a
-              href="/pharmacy/ContactUs"
-              onClick={() => {
-                setopt("Contact Us");
-              }}
-              className={opt === "Contact Us" ? "active contact-us" : ""}
-            >
+            <a href="#ContactUs" className="contact-us">
               <span>Contact Us</span>
             </a>
           </ul>

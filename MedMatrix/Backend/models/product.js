@@ -1,15 +1,50 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-  pharmasictId: { type: mongoose.Schema.Types.ObjectId, ref: 'user_info', required: true },
-  image: { type: String }, // Store image path or URL
-  name: { type: String, required: true },
-  description: { type: String },
-  category: { type: String, required: true },
-  price: { type: Number, required: true },
-  quantity: { type: String, required: true },
-  dose: { type: String, required: true },
-  
-}, { timestamps: true });
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  dose: {
+    type: String,
+    required: true,
+  },
+  category: {
+    type: String,
+    required: true,
+    enum: [
+      'pain-relief-medications',
+      'cold-&-flu-medications',
+      'antibiotics',
+      'allergy-medications',
+      'digestive-health-products',
+      'cardiovascular-medications',
+      'diabetes-medications',
+      'topical-medications',
+      'mental-health-medications',
+      'eye-care-medications',
+    ],
+  },
+  image: {
+    type: String,
+  },
+  pharmacyId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Pharmacy',
+    required: true,
+  },
+});
 
 module.exports = mongoose.model('Product', productSchema);

@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 import './Navbar2.css';
@@ -13,7 +10,7 @@ const Navbar2 = () => {
     <div className="nav">
       <div className="navbar">
         <div className="logo">
-          <img src={assets.logo} alt="Logo" />
+          <img src={assets.Logo} alt="Logo" />
         </div>
         <div className="list">
           <ul>
@@ -28,13 +25,19 @@ const Navbar2 = () => {
               to='/customer/Shop'
               className={location.pathname === '/customer/Shop' ? 'active' : ''}
             >
-              <span>Shop</span>
+              <span>Pharmacy</span>
             </NavLink>
             <NavLink
               to='/customer/Cart'
               className={location.pathname === '/customer/Cart' ? 'active' : ''}
             >
               <span>Cart</span>
+            </NavLink>
+            <NavLink
+              to='/customer/Appointment'
+              className={location.pathname === '/customer/Appointment' ? 'active' : ''}
+            >
+              <span>Appointment</span>
             </NavLink>
             <NavLink
               to='/customer/Profile'

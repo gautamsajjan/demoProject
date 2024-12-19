@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Signup from './Components/login and signup/Signup';
 import Login from './Components/login and signup/login';
-import FarmerPage from './Components/PharmacyPage/PharmacyPage';
-import ConsumerPage from './Components/CustomerPage/CustomerPage';
+import PharmacyPage from './Components/PharmacyPage/PharmacyPage';
+import CustomerPage from './Components/CustomerPage/CustomerPage';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -88,16 +88,16 @@ const App = () => {
           <Route
             path="/pharmacy/*"
             element={
-              // <ProtectedPharmacyRoute>
-                <FarmerPage />
-              // </ProtectedPharmacyRoute>
+              <ProtectedPharmacyRoute>
+                <PharmacyPage />
+              </ProtectedPharmacyRoute>
             }
           />
           <Route
             path="/customer/*"
             element={
-              // <ProtectedCustomerRoute>
-                <ConsumerPage />
+              <ProtectedCustomerRoute>
+                <CustomerPage />
               // </ProtectedCustomerRoute>
             }
           />

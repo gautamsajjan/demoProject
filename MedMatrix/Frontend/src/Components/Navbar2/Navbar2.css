@@ -16,8 +16,8 @@
 .list ul {
     list-style: none;
     display: flex;
-    gap: 65px;
-    margin-left: 550px;
+    gap: 55px;
+    margin-left: 400px;
     margin-top: 25px;
     font-size: 16px;
     cursor: pointer;

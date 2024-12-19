@@ -5,7 +5,7 @@
     box-sizing: border-box;
   }
   
-  body {
+  .body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,11 +105,11 @@
     color: #888;
   }
   
-  #farmerFields {
+  #pharmacyFields {
     display: none; /* Initially hidden */
   }
   
-  #farmerFields .input-field {
+  #pharmacyFields .input-field {
     margin-bottom: 20px;
   }
   

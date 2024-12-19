@@ -2,28 +2,27 @@ import React from "react";
 import "./Bgshop.css";
 
 const Bgshop = () => {
-
   return (
     <div className="container">
       <div className="content">
         <div className="text-section">
           <p>
-            Welcome to <strong>Krishi Sanjal</strong>, the largest online hub
-            where local farmers connect directly with customers, delivering
-            fresh, organic, and sustainable products straight from the fields.
-            Experience the joy of knowing your food's source while supporting
-            local farmers and embracing health with every bite.
+            Welcome to <strong>MedMatrix</strong>, your trusted online platform 
+            for accessing a wide range of medical products. From essential 
+            medicines to healthcare tools, we connect customers with reliable 
+            pharmacies for convenient and safe shopping. Prioritize your health 
+            with just a few clicks.
           </p>
         </div>
         <div className="action-section">
           <header className="header">
-            <h1>Farm Fresh to Your Table</h1>
-            <p>Bridging Farmers and Consumers with Nature's Best Harvests</p>
+            <h1>Care Delivered to Your Doorstep</h1>
+            <p>Connecting Customers with Trusted Pharmacies and Healthcare Essentials</p>
           </header>
           <div className="search-box">
             <input
               type="text"
-              placeholder="Search Products"
+              placeholder="Search Medical Products"
               className="search-input"
             />
             <button className="search-button">Search</button>
